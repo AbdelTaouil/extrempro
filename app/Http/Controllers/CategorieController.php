@@ -14,7 +14,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        //
+        return view ('categories');
     }
 
     /**
@@ -35,7 +35,18 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validateForm = $request->validate([
+            'categorie'=> 'string|required'
+        ]);
+
+        $newCategorie = new Categorie;
+
+        $newCategorie->categorie = $request->categorie;
+
+        $newCategorie->save();
+
+        return redirect()->back();
     }
 
     /**

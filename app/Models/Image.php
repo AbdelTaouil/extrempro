@@ -12,7 +12,15 @@ class Image extends Model
     protected $fillable = [
         'photo',
         'categorie_id',
-        'avatar_id',
         'user_id',
     ];
+
+    public function categorie () 
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+    public function user () 
+    {
+        return $this->belongsTo(User::class);
+    }
 }

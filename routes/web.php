@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +18,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//home
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//User
+
+Route::get('/user', [UserController::class, 'index']);
+
+
+
+//Avatar
 Route::post('/create-avatar', [AvatarController::class, 'store']);
+
+
+
+//Categorie
+Route::get('/categorie', [CategorieController::class, 'index']);
+Route::post('/create-categorie', [CategorieController::class, 'store']);
+
+
+//Image
+
+Route::get('/image', [ImageController::class, 'index']);
+Route::post('/add-image', [ImageController::class, 'store']);
+

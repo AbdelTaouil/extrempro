@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Image;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -14,7 +16,10 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $categories = Categorie::all();
+
+        return view ('images' ,compact('users','categories'));
     }
 
     /**
@@ -35,7 +40,27 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateForm = $request->validate([
+            'photo'=> 'required',
+            'categorie_id'=> 'integer|required',
+            'user_id'=> 'integer|required'
+
+        ]);
+
+        $newImage = new Image();
+
+        $newImage->photo = $request->file('photo')->hashName();
+
+        $newImage->categorie_id = $request->categorie_id;
+
+        $newImage->user_id = $request->user_id;
+
+
+        $newImage->save();
+
+        $request->file('photo')->storePublicly('images','public');
+
+        return redirect()->back();
     }
 
     /**

@@ -49886,8 +49886,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/taouil/Bureau/Laravel/Extremprogramme2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/taouil/Bureau/Laravel/Extremprogramme2/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Programation\Laravel\laragon\www\extrempro\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Programation\Laravel\laragon\www\extrempro\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

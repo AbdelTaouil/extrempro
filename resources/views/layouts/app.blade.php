@@ -52,12 +52,23 @@
                                 </li>
                             @endif
                         @else
+                           
+                                <a class="nav-link pt-2" href="{{ url('/') }}" class="text-sm text-gray-700 underline">Home</a>
+                                <a class="nav-link pt-2" href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Creer un avatar</a>
+                                <a class="nav-link pt-2" href="{{ url('/categorie') }}" class="text-sm text-gray-700 underline">Creer une categories</a>
+                                <a class="nav-link pt-2" href="{{ url('/image') }}" class="text-sm text-gray-700 underline">Ajouter des images</a>
+                                <a class="nav-link pt-2" href="{{ url('/user') }}" class="text-sm text-gray-700 underline">Ma Galerie</a>
+
+                            
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle pt-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+                                
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
